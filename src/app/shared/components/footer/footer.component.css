@@ -1,0 +1,36 @@
+.footer {
+  background-color: #fde4e4; /* Tono cálido que combina con el navbar */
+  border-top: 1px solid #f5c6c6; /* Línea superior en tono ligeramente más oscuro */
+}
+
+.footer-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer-text {
+    margin-bottom: 10px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}

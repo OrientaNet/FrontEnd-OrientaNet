@@ -1,0 +1,55 @@
+<section class="register-container">
+  <div class="register-content">
+    <div class="register-card">
+      <div class="register-image">
+        <img src="logo-orientanet.png" class="avatar-image">
+      </div>
+      <div class="register-form">
+        <h1 class="logo">ORIENTA<span class="plus">+</span></h1>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" type="text" placeholder="Ingresa tu nombre">
+            @if (controlHasError('nombre', 'required')) {
+              <mat-error>Este campo es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido" type="text" placeholder="Ingresa tu apellido">
+            @if (controlHasError('apellido', 'required')) {
+              <mat-error>Este campo es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="Ingresa tu correo">
+            @if (controlHasError('email', 'required')) {
+              <mat-error>Este campo es obligatorio</mat-error>
+            }
+            @if (controlHasError('email', 'email')) {
+              <mat-error>Introduzca un correo electrónico válido</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="contrasena" type="password" placeholder="Ingresa tu contraseña">
+            @if (controlHasError('contrasena', 'required')) {
+              <mat-error>Este campo es obligatorio</mat-error>
+            }
+          </mat-form-field>
+
+          <button mat-raised-button class="submit-button" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+          <a routerLink="/auth/login" class="login-link">¿Ya tienes una cuenta? Inicia sesión</a>
+        </form>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="icono2.png" alt="Books and Graduation Cap" class="side-image">
+    </div>
+  </div>
+</section>
