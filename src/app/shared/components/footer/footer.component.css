@@ -1,36 +1,33 @@
 .footer {
-  background-color: #fde4e4; /* Tono cálido que combina con el navbar */
-  border-top: 1px solid #f5c6c6; /* Línea superior en tono ligeramente más oscuro */
+  background-color: #fde4e4; /* Fondo cálido */
+  border-top: 1px solid #f5c6c6; /* Línea decorativa */
+  padding: 10px 0; /* Espaciado interno */
+  text-align: center;
+  width: 100%;
+  position: relative; /* Cambia de fixed a relative */
+  bottom: 0;
 }
 
-.footer-text {
-  color: #6c757d;
+.footer p {
+  margin: 0;
   font-size: 0.9rem;
+  color: #6c757d; /* Texto secundario */
 }
 
 .social-icons {
+  margin-top: 10px;
   display: flex;
+  justify-content: center;
   gap: 15px;
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
+.social-icons a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
   transition: transform 0.2s ease;
 }
 
-.social-icon:hover {
-  transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
-}
-
-@media (max-width: 768px) {
-  .footer {
-    text-align: center;
-  }
-  .footer-text {
-    margin-bottom: 10px;
-  }
-  .social-icons {
-    justify-content: center;
-  }
+.social-icons a:hover {
+  transform: scale(1.2); /* Efecto hover */
 }

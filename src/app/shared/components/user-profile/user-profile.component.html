@@ -1,1 +1,42 @@
-<p>user-profile works!</p>
+<div class="profile-container">
+  <h2 class="profile-title">Perfil de Usuario</h2>
+  <div class="profile-details">
+    <p><strong>Nombre:</strong> {{ profile.nombre }} {{ profile.apellido }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p><strong>Rol:</strong> {{ profile.role }}</p>
+    <ng-container *ngIf="profile.informacionPersonal">
+      <p><strong>Información Personal:</strong> {{ profile.informacionPersonal }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.nivelAcademico">
+      <p><strong>Nivel Académico:</strong> {{ profile.nivelAcademico }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.institucion">
+      <p><strong>Institución:</strong> {{ profile.institucion }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.intereses">
+      <p><strong>Intereses:</strong> {{ profile.intereses }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.carreraInteres">
+      <p><strong>Carrera de Interés:</strong> {{ profile.carreraInteres }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.experiencia">
+      <p><strong>Experiencia:</strong> {{ profile.experiencia }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.certificaciones">
+      <p><strong>Certificaciones:</strong> {{ profile.certificaciones }}</p>
+    </ng-container>
+    <ng-container *ngIf="profile.carrera">
+      <p><strong>Carrera:</strong> {{ profile.carrera }}</p>
+    </ng-container>
+  </div>
+  <div class="button-container">
+    <button class="btn-update" (click)="redirectToUpdateProfile()">Actualizar Perfil</button>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- Componente de resultados del test -->
+<div class="resultados-container">
+  <app-resultado-test></app-resultado-test>
+</div>

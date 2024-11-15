@@ -1,11 +1,17 @@
-.navbar{
-  background-color: #fde4e4; /* Tono cálido que combina con el navbar */
-  border-bottom: 1px solid #f5c6c6; /* Línea superior en tono ligeramente más oscuro */
+/* Estilos del Navbar */
+.navbar {
+  background-color: #fde4e4; /* Tono cálido */
+  border-bottom: 1px solid #f5c6c6;
+  margin: 0;
+  padding: 0;
+  height: 70px; /* Altura fija */
+  box-sizing: border-box;
 }
 
 .navbar-brand {
   font-weight: bold;
-  color: #f08080; /* color personalizado */
+  color: #f08080;
+  margin: 0;
 }
 
 .navbar-nav .nav-link,
@@ -15,12 +21,12 @@
 
 .navbar-button {
   background-color: #f08080;
-  border-color: #FDECE2;
-  color: black; /* Ajusta el color del texto si lo prefieres */
+  border-color: #fdece2;
+  color: black;
 }
 
 .navbar-button:hover {
-  background-color: #f8d6c3; /* Cambia a un color un poco más oscuro en hover */
+  background-color: #f8d6c3;
   border-color: #f8d6c3;
 }
 
@@ -33,4 +39,30 @@
   .dropdown-menu {
     text-align: center;
   }
+}
+
+/* Estilos globales */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 70px; /* Ajustado al navbar */
+  left: 0;
+  height: calc(100vh - 70px);
+  margin: 0;
+  padding: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal */
+.main-content {
+  margin-left: 250px; /* Espacio para el sidebar */
+  padding: 30px;
+  background-color: #ffffff;
 }

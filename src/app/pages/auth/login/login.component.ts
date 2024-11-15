@@ -50,7 +50,7 @@ export class LoginComponent {
     this.authService.login(credentials).subscribe({
       next: () => {
         this.showSnackBar('inicio de sesion exitoso');
-        this.router.navigate(['/auth/register']);
+        this.router.navigate(['/estudiante']);
       },
       error: () => {
         this.showSnackBar('Error en el inicio de sesion. Porfavor, intentar de nuevo.');

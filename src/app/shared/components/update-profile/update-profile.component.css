@@ -1,0 +1,84 @@
+/* Contenedor del formulario */
+.form-container {
+  max-width: 900px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrar el formulario horizontalmente */
+  background-color: #fffaf0; /* Fondo claro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Título del formulario */
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #e53935;
+  margin-bottom: 20px;
+}
+
+/* Estilos del grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 20px; /* Espaciado entre columnas y filas */
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #e53935;
+  box-shadow: 0 0 4px rgba(229, 57, 53, 0.4);
+}
+
+/* Botón de guardar cambios */
+.form-actions {
+  grid-column: span 2; /* Ocupa las dos columnas */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #e53935;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* Cambiar a una sola columna */
+  }
+
+  .submit-button {
+    width: 100%; /* Botón se adapta al ancho */
+  }
+}

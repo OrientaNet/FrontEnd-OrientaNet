@@ -1,1 +1,45 @@
-<p>update-profile works!</p>
+<div class="main-content">
+  <div class="form-container">
+    <h2 class="form-title">Actualizar Perfil</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+      <div class="form-grid">
+        <!-- Primera columna -->
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" formControlName="nombre" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input id="apellido" formControlName="apellido" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" class="form-control" type="email" />
+        </div>
+        <div class="form-group">
+          <label for="nivelAcademico">Nivel Académico</label>
+          <input id="nivelAcademico" formControlName="nivelAcademico" class="form-control" />
+        </div>
+
+        <!-- Segunda columna -->
+        <div class="form-group">
+          <label for="informacionPersonal">Información Personal</label>
+          <textarea id="informacionPersonal" formControlName="informacionPersonal" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="institucion">Institución</label>
+          <input id="institucion" formControlName="institucion" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="intereses">Intereses</label>
+          <textarea id="intereses" formControlName="intereses" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <!-- Botón de guardar cambios -->
+      <div class="form-actions">
+        <button type="submit" class="submit-button">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>

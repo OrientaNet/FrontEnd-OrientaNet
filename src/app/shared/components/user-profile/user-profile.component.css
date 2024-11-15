@@ -1,0 +1,80 @@
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fffaf0; /* Fondo claro */
+  border: 1px solid #f5c6c6; /* Borde suave */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e53935; /* Color principal */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-details p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333; /* Texto oscuro */
+}
+
+.profile-details p strong {
+  color: #e53935; /* Color destacado */
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-update {
+  background-color: #e53935;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-update:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+  }
+
+  .profile-title {
+    font-size: 20px;
+  }
+
+  .profile-details p {
+    font-size: 14px;
+  }
+
+  .btn-update {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .section-divider {
+    margin: 40px 0;
+    border: none;
+    height: 1px;
+    background-color: #f5c6c6;
+  }
+
+  .resultados-container {
+    background-color: #fef7e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}

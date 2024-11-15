@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,18 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class NavbarComponent {
 
-  logout(): void {
+  private authService = inject(AuthService);
 
+
+  isAuthenticated = false; // Indica si el usuario está autenticado
+
+  ngOnInit(): void {
+    this.isAuthenticated = this.authService.isAuthenticated();
+  }
+
+
+  logout(): void {
+    this.authService.logout();
+    this.isAuthenticated = false;
   }
 }

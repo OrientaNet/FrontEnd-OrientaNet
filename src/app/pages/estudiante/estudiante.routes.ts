@@ -4,6 +4,7 @@ import { RealizarPruebaComponent } from './realizar-prueba/realizar-prueba.compo
 import { PagosComponent } from './pagos/pagos.component';
 import { UserProfileComponent } from '../../shared/components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from '../../shared/components/update-profile/update-profile.component';
+import { ResultadoTestComponent } from './resultado-test/resultado-test.component';
 
 export const estudianteRoutes: Routes = [
   {
@@ -12,9 +13,9 @@ export const estudianteRoutes: Routes = [
     children: [
       { path: 'realizar-prueba', component: RealizarPruebaComponent },
       { path: 'pagos', component: PagosComponent },
-      { path: 'profile', component: UserProfileComponent},
-      { path: 'profile/update', component: UpdateProfileComponent},
-      { path: '', redirectTo: 'realizar-prueba', pathMatch: 'full' }, // Ruta por defecto
-    ]
+      { path: 'profile', component: UserProfileComponent },
+      { path: 'profile/update', component: UpdateProfileComponent },
+      { path: 'resultado-test', component: ResultadoTestComponent }
+    ],
   }
 ];

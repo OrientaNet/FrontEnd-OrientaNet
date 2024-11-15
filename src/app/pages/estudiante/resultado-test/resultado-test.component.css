@@ -1,0 +1,27 @@
+.resultado-test-container {
+  background-color: #fffaf0;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-title {
+  font-size: 24px;
+  color: #e53935;
+  margin-bottom: 15px;
+}
+
+.resultado-details p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.no-resultado {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
