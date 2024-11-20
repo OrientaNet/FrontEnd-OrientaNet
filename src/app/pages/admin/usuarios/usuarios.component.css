@@ -1,0 +1,113 @@
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Título principal */
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.search-form {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* Indicador de carga */
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: #007bff;
+  margin: 20px 0;
+}
+
+/* Detalles del usuario */
+.user-details {
+  margin-top: 20px;
+}
+
+.details-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.details-container {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.details-container p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.details-container strong {
+  color: #555;
+}

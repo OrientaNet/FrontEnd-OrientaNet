@@ -17,5 +17,11 @@ export const routes: Routes = [
     path:'estudiante',
     loadChildren: () => import('./pages/estudiante/estudiante.routes').then(e => e.estudianteRoutes),
     canActivate: [authGuard]
-  }
+  },
+
+    {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.routes').then((m) => m.adminRoutes),
+    canActivate: [authGuard], // Asegúrate de que el `authGuard` valide el rol de administrador.
+  },
 ];

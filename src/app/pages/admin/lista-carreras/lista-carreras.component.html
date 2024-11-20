@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="title">Lista de Carreras</h2>
+  <button class="btn btn-primary" routerLink="/admin/crear-carreras">Crear Nueva Carrera</button>
+  <div *ngIf="cargando" class="loading">Cargando...</div>
+  <table *ngIf="!cargando && carreras.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carrera of carreras">
+        <td>{{ carrera.id }}</td>
+        <td>{{ carrera.nombre }}</td>
+        <td>{{ carrera.descripcion }}</td>
+        <td>
+          <button class="btn btn-warning" [routerLink]="['/admin/editar-carrera', carrera.id]">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

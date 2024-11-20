@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="title">Buscar Usuario</h2>
+
+  <!-- Formulario para ingresar el ID -->
+  <form [formGroup]="usuarioForm" (ngSubmit)="buscarUsuario()" class="search-form">
+    <div class="form-group">
+      <label for="id" class="form-label">ID del Usuario:</label>
+      <input
+        type="text"
+        id="id"
+        formControlName="id"
+        class="form-control"
+        placeholder="Ingresa el ID"
+      />
+      <div *ngIf="usuarioForm.controls['id'].invalid && usuarioForm.controls['id'].touched" class="error-message">
+        Por favor, ingresa un ID válido.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">Buscar</button>
+  </form>
+
+  <!-- Indicador de carga -->
+  <div *ngIf="cargando" class="loading">
+    <span>Cargando...</span>
+  </div>
+
+  <!-- Mostrar datos del usuario -->
+  <div *ngIf="usuario" class="user-details">
+    <h3 class="details-title">Detalles del Usuario</h3>
+    <div class="details-container">
+      <p><strong>ID:</strong> {{ usuario.id }}</p>
+      <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+      <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+      <p><strong>Email:</strong> {{ usuario.email }}</p>
+      <p><strong>Rol:</strong> {{ usuario.role }}</p>
+      <p><strong>Nivel Académico:</strong> {{ usuario.nivelAcademico || 'No especificado' }}</p>
+      <p><strong>Intereses:</strong> {{ usuario.intereses || 'No especificado' }}</p>
+    </div>
+  </div>
+</div>

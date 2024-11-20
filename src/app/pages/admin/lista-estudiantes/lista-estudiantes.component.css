@@ -1,0 +1,74 @@
+/* Contenedor general */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las cabeceras de la tabla */
+thead tr {
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: left;
+  font-weight: bold;
+}
+
+thead th {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para las filas de la tabla */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+tbody td {
+  padding: 12px 15px;
+}
+
+/* Botón de acciones */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Contenedor para mensajes de error o cargando */
+div {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+div.cargando {
+  color: #666;
+}
+
+div.error {
+  color: #e53935;
+  font-weight: bold;
+}
