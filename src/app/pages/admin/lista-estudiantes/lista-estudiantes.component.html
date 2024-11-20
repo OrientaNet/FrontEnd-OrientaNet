@@ -1,0 +1,28 @@
+<div *ngIf="loading">Cargando estudiantes...</div>
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!loading && estudiantes.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nivel Académico</th>
+        <th>Institución</th>
+        <th>Intereses</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of estudiantes">
+        <td>{{ estudiante.id }}</td>
+        <td>{{ estudiante.informacionPersonal }}</td>
+        <td>{{ estudiante.nivelAcademico }}</td>
+        <td>{{ estudiante.institucion }}</td>
+        <td>{{ estudiante.intereses }}</td>
+        <td>
+          <button (click)="verDetalleEstudiante(estudiante.id)">Ver Detalle</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

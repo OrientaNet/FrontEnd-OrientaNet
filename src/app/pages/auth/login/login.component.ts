@@ -49,8 +49,21 @@ export class LoginComponent {
 
     this.authService.login(credentials).subscribe({
       next: () => {
-        this.showSnackBar('inicio de sesion exitoso');
-        this.router.navigate(['/estudiante']);
+        this.showSnackBar('Inicio de sesión exitoso');
+
+        // Obtener el rol del usuario autenticado
+        const userRole = this.authService.getUserRole(); // Asegúrate de tener este método en tu AuthService
+
+        // Redirigir según el rol del usuario
+        if (userRole === 'ADMIN') {
+          this.router.navigate(['/admin']);
+        } else if (userRole === 'ESTUDIANTE') {
+          this.router.navigate(['/estudiante']);
+        } else if (userRole === 'EXPERTO') {
+          this.router.navigate(['/experto']);
+        } else {
+          this.showSnackBar('Rol de usuario no reconocido');
+        }
       },
       error: () => {
         this.showSnackBar('Error en el inicio de sesion. Porfavor, intentar de nuevo.');

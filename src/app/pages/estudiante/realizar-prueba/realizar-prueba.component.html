@@ -1,1 +1,45 @@
-<p>realizar-prueba works!</p>
+<div class="prueba-container" *ngIf="preguntas && preguntas.length > 0">
+  <h2 class="titulo-prueba">Prueba Vocacional: {{ prueba.nombre }}</h2>
+
+  <!-- Formulario Reactivo -->
+  <form [formGroup]="formularioPrueba">
+    <!-- Pregunta Actual -->
+    <div class="pregunta-container" *ngIf="preguntaActual">
+      <p class="pregunta"><strong>{{ preguntaActual.descripcion }}</strong></p>
+
+      <!-- Opciones de Respuestas -->
+      <div class="opciones">
+        <mat-card *ngFor="let respuesta of preguntaActual.respuestas" class="opcion-card">
+          <mat-radio-group [formControlName]="preguntaActual.id">
+            <mat-radio-button [value]="respuesta.id">{{ respuesta.descripcion }}</mat-radio-button>
+          </mat-radio-group>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Navegación de Preguntas -->
+    <div class="botones">
+      <button mat-button type="button" (click)="anteriorPregunta()" [disabled]="indicePregunta === 0">
+        Anterior
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="siguientePregunta()"
+        [disabled]="indicePregunta === preguntas.length - 1"
+      >
+        Siguiente
+      </button>
+    </div>
+
+    <!-- Botón Finalizar -->
+    <div class="finalizar-container" *ngIf="indicePregunta === preguntas.length - 1">
+      <button mat-raised-button color="accent" type="button" (click)="terminarPrueba()">Terminar Prueba</button>
+    </div>
+  </form>
+</div>
+
+<div class="no-preguntas" *ngIf="preguntas?.length === 0">
+  <p>No hay preguntas disponibles para esta prueba.</p>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="title">Crear Nueva Carrera</h2>
+  <form [formGroup]="carreraForm" (ngSubmit)="crearCarrera()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre" class="form-control" placeholder="Nombre de la carrera" />
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" formControlName="descripcion" class="form-control" placeholder="Descripción"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="carreraForm.invalid">Crear</button>
+  </form>
+</div>

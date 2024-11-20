@@ -1,0 +1,112 @@
+
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fdece2;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #e53935;
+}
+
+.header p {
+  font-size: 18px;
+  color: #666;
+  margin: 20px 0;
+}
+
+.header .btn {
+  padding: 10px 20px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.header .btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Section */
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #e53935;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  background-color: #fdece2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature i {
+  font-size: 40px;
+  color: #e53935;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  color: #e53935;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Call-to-action */
+.cta {
+  background-color: #fde4e4;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.cta h2 {
+  font-size: 24px;
+  color: #e53935;
+  margin-bottom: 20px;
+}
+
+.cta .btn {
+  padding: 10px 20px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta .btn:hover {
+  background-color: #d32f2f;
+}
+
