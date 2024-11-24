@@ -69,7 +69,7 @@ export class EditarCarreraComponent implements OnInit {
 
       this.carreraService.actualizarCarrera(this.carreraId, carreraActualizada).subscribe({
         next: () => {
-          this.snackBar.open('Carrera actualizada con éxito', 'Cerrar', { duration: 3000 });
+          this.snackBar.open('Carrera actualizada con Ã©xito', 'Cerrar', { duration: 3000 });
           this.router.navigate(['/admin/lista-carreras']);
         },
         error: () => {

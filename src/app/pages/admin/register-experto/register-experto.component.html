@@ -1,0 +1,42 @@
+<section class="register-container">
+  <div class="register-content">
+    <div class="register-card">
+      <div class="register-image">
+        <img src="logo-orientanet.png" class="avatar-image" alt="Logo">
+      </div>
+      <div class="register-form">
+        <h1 class="logo">ORIENTA<span class="plus">+</span></h1>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" type="text" placeholder="Ingresa el nombre del experto">
+            <mat-error *ngIf="controlHasError('nombre', 'required')">Este campo es obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido" type="text" placeholder="Ingresa el apellido del experto">
+            <mat-error *ngIf="controlHasError('apellido', 'required')">Este campo es obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="Ingresa el correo electrónico">
+            <mat-error *ngIf="controlHasError('email', 'required')">Este campo es obligatorio</mat-error>
+            <mat-error *ngIf="controlHasError('email', 'email')">Introduce un correo electrónico válido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="contrasena" type="password" placeholder="Ingresa la contraseña">
+            <mat-error *ngIf="controlHasError('contrasena', 'required')">Este campo es obligatorio</mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button class="submit-button" type="submit" [disabled]="registerForm.invalid">Registrar Experto</button>
+          <button mat-button class="cancel-button" type="button" (click)="cancelar()">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
