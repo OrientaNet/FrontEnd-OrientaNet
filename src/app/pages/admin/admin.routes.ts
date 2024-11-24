@@ -6,6 +6,7 @@ import { ListaEstudiantesComponent } from './lista-estudiantes/lista-estudiantes
 import { ListaCarrerasComponent } from './lista-carreras/lista-carreras.component';
 import { CrearCarreraComponent } from './crear-carrera/crear-carrera.component';
 import { EditarCarreraComponent } from './editar-carrera/editar-carrera.component';
+import { RegisterExpertoComponent } from './register-experto/register-experto.component';
 
 
 export const adminRoutes: Routes = [
@@ -21,6 +22,8 @@ export const adminRoutes: Routes = [
         path: 'editar-carrera/:id',
         component: EditarCarreraComponent,
       },
+      { path: 'registrar-experto', component: RegisterExpertoComponent },
+
     ],
   },
 ];

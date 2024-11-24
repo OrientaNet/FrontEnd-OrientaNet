@@ -32,6 +32,11 @@ export class AuthService {
        registerRequest);
   }
 
+  registerExperto(registerRequest: RegisterRequest): Observable<RegisterResponse> {
+    return this.http.post<RegisterResponse>(`${this.baseURL}/register/experto`,
+       registerRequest);
+  }
+
   logout(): void{
     this.storageService.clearAuthData();
   }

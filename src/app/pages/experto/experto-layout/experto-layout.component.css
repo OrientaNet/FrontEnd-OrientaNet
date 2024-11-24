@@ -1,0 +1,69 @@
+/* Layout general */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 70px; /* Ajustar según la altura del navbar */
+  background-color: #fff;
+}
+
+/* Menú lateral */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: fixed;
+  height: calc(100vh - 70px);
+  top: 70px;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
+  color: #e53935;
+}
+
+.brand {
+  text-decoration: none;
+  color: #e53935;
+  font-size: 22px;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #e53935;
+  color: white;
+}
+
+/* Contenedor principal */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 30px;
+  margin-top: 70px;
+  box-sizing: border-box;
+}

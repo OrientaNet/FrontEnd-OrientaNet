@@ -16,6 +16,7 @@ import { ResultadoTestComponent } from '../../../pages/estudiante/resultado-test
 })
 export class UserProfileComponent {
   profile!: UserProfile; // Aseguramos que no sea null o undefined con el operador de aserción
+  isEstudiante: boolean = false;
 
   private userProfileService = inject(UserProfileService);
   private authService = inject(AuthService);
@@ -24,6 +25,11 @@ export class UserProfileComponent {
 
   ngOnInit(): void {
     this.loadUserProfile();
+  }
+
+  private checkUserRole(): void {
+    const authData = this.authService.getUser(); // Obtiene los datos del usuario autenticado
+    this.isEstudiante = authData?.role === 'ESTUDIANTE'; // Actualiza la bandera según el rol
   }
 
   loadUserProfile(): void {
