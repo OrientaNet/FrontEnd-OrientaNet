@@ -16,6 +16,8 @@ export class PruebaVocacionalService {
   }
 
   enviarRespuestas(pruebaId: number, estudianteId: number, respuestas: { [key: number]: number }): Observable<any> {
+    // Solo enviamos los IDs de las respuestas, sin envolverlo en un objeto 'respuestas'
     return this.http.post(`${this.baseURL}/${estudianteId}/realizar/${pruebaId}`, respuestas);
   }
+
 }

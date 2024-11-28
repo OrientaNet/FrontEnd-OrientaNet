@@ -24,4 +24,11 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/admin/admin.routes').then((m) => m.adminRoutes),
     canActivate: [authGuard], // Asegúrate de que el `authGuard` valide el rol de administrador.
   },
+
+  {
+    path: 'experto',
+    loadChildren: () => import('./pages/experto/experto.routes').then(x => x.expertoRoutes),
+    canActivate: [authGuard] // Asegúrate de que solo usuarios con rol de experto puedan acceder
+  }
+
 ];

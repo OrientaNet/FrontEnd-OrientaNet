@@ -2,7 +2,7 @@
   <div class="register-content">
     <div class="register-card">
       <div class="register-image">
-        <img src="logo-orientanet.png" class="avatar-image">
+        <img src="icono2.png" class="avatar-image">
       </div>
       <div class="register-form">
         <h1 class="logo">ORIENTA<span class="plus">+</span></h1>
@@ -38,9 +38,10 @@
           <mat-form-field class="mat-form-field">
             <mat-label>Contraseña</mat-label>
             <input matInput formControlName="contrasena" type="password" placeholder="Ingresa tu contraseña">
-            @if (controlHasError('contrasena', 'required')) {
-              <mat-error>Este campo es obligatorio</mat-error>
-            }
+            <mat-error *ngIf="controlHasError('contrasena', 'required')">Este campo es obligatorio</mat-error>
+            <mat-error *ngIf="controlHasError('contrasena', 'passwordPattern')">
+              La contraseña debe tener al menos 8 caracteres, una letra mayúscula y un número
+            </mat-error>
           </mat-form-field>
 
           <button mat-raised-button class="submit-button" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
@@ -49,7 +50,7 @@
       </div>
     </div>
     <div class="image-section">
-      <img src="icono2.png" alt="Books and Graduation Cap" class="side-image">
+      <img src="assets/icono2.png" alt="Books and Graduation Cap" class="side-image">
     </div>
   </div>
 </section>

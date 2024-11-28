@@ -34,9 +34,11 @@
   </div>
 </div>
 
+<div  *ngIf="isEstudiante">
 <hr class="section-divider" />
+</div>
 
 <!-- Componente de resultados del test -->
-<div class="resultados-container">
+<div class="resultados-container" *ngIf="isEstudiante">
   <app-resultado-test></app-resultado-test>
 </div>
