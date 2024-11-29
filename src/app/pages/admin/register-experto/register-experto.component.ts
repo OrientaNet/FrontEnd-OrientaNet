@@ -39,7 +39,7 @@ export class RegisterExpertoComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      const expertData = { ...this.registerForm.value, role: 'EXPERTO' }; // AÃ±adimos el rol de experto
+      const expertData = { ...this.registerForm.value, role: 'EXPERTO' }; // Añadimos el rol de experto
 
       this.authService.registerExperto(expertData).subscribe({
         next: () => {

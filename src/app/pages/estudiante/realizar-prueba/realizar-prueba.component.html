@@ -1,4 +1,4 @@
-<div class="prueba-container" *ngIf="preguntas && preguntas.length > 0">
+<div class="prueba-container" *ngIf="prueba && prueba.preguntas.length > 0">
   <h2 class="titulo-prueba">Prueba Vocacional: {{ prueba.nombre }}</h2>
 
   <!-- Formulario Reactivo -->
@@ -27,19 +27,19 @@
         color="primary"
         type="button"
         (click)="siguientePregunta()"
-        [disabled]="indicePregunta === preguntas.length - 1"
+        [disabled]="indicePregunta === prueba.preguntas.length - 1"
       >
         Siguiente
       </button>
     </div>
 
     <!-- Botón Finalizar -->
-    <div class="finalizar-container" *ngIf="indicePregunta === preguntas.length - 1">
+    <div class="finalizar-container" *ngIf="indicePregunta === prueba.preguntas.length - 1">
       <button mat-raised-button color="accent" type="button" (click)="terminarPrueba()">Terminar Prueba</button>
     </div>
   </form>
 </div>
 
-<div class="no-preguntas" *ngIf="preguntas?.length === 0">
+<div class="no-preguntas" *ngIf="!prueba || prueba.preguntas.length === 0">
   <p>No hay preguntas disponibles para esta prueba.</p>
 </div>
