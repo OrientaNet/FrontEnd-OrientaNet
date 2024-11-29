@@ -1,3 +1,4 @@
+import { AuthService } from './../../../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -25,11 +26,12 @@ export class RealizarPruebaComponent implements OnInit {
     private pruebaService: PruebaVocacionalService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private AuthService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.cargarPrueba(17); // Cambia este ID por el ID dinámico de la prueba
+    this.cargarPrueba(15); // Cambia este ID por el ID dinámico de la prueba
   }
 
   cargarPrueba(pruebaId: number): void {
@@ -71,17 +73,24 @@ export class RealizarPruebaComponent implements OnInit {
   terminarPrueba(): void {
     if (this.formularioPrueba.valid) {
       const respuestasSeleccionadas = this.formularioPrueba.value;
-      const estudianteId = 1; // Cambiar por el ID del estudiante logueado
+      const authData = this.AuthService.getUser();
+      const estudianteId = authData?.id;
 
-      this.pruebaService.enviarRespuestas(this.prueba.id, estudianteId, respuestasSeleccionadas).subscribe({
-        next: () => {
-          this.snackBar.open('Prueba enviada exitosamente', 'Cerrar', { duration: 3000 });
-          this.router.navigate(['/estudiante/resultado-test']);
-        },
-        error: () => {
-          this.snackBar.open('Error al enviar las respuestas', 'Cerrar', { duration: 3000 });
-        }
-      });
+      // Verifica si estudianteId está definido
+      if (estudianteId !== undefined) {
+        this.pruebaService.enviarRespuestas(this.prueba.id, estudianteId, respuestasSeleccionadas).subscribe({
+          next: () => {
+            this.snackBar.open('Prueba enviada exitosamente', 'Cerrar', { duration: 3000 });
+            this.router.navigate(['/estudiante/resultado-test']);
+          },
+          error: () => {
+            this.snackBar.open('Error al enviar las respuestas', 'Cerrar', { duration: 3000 });
+          }
+        });
+      } else {
+        // Si el estudianteId no está definido, muestra un mensaje de error
+        this.snackBar.open('No se pudo obtener el ID del estudiante. Por favor, vuelve a iniciar sesión.', 'Cerrar', { duration: 3000 });
+      }
     } else {
       this.snackBar.open('Por favor, responde todas las preguntas antes de finalizar', 'Cerrar', { duration: 3000 });
     }
