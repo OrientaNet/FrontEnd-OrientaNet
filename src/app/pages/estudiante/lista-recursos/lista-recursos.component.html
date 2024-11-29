@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 class="title">Lista de Recursos Educativos</h2>
+    
+    <div *ngIf="cargando" class="loading">Cargando...</div>
+    
+    <table *ngIf="!cargando && recursos.length > 0" class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Recurso</th>
+          <th>URL</th>
+          <th>Carrera</th>
+          <th>Experto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recurso of recursos">
+          <td>{{ recurso.id }}</td>
+          <td>{{ recurso.nombre }}</td>
+          <td>{{ recurso.descripcion }}</td>
+          <td>{{ recurso.recurso }}</td>
+          <td>{{ recurso.url }}</td>
+          <td>{{ recurso.carreraId }}</td>
+          <td>{{ recurso.expertoId }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="recursos.length === 0" class="alert alert-info">
+      No hay recursos disponibles.
+    </div>
+  </div>
+  

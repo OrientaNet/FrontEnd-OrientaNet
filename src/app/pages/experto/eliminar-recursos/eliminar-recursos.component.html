@@ -1,0 +1,24 @@
+
+<div class="container">
+    <h2 class="title">Eliminar Recurso</h2>
+    
+    <div class="alert alert-warning" role="alert">
+      ¿Estás seguro de que deseas eliminar este recurso educativo? Esta acción no se puede deshacer.
+    </div>
+  
+    <div *ngIf="recurso">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="form-control" [value]="recurso.nombre" disabled />
+      </div>
+  
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" class="form-control" [value]="recurso.descripcion" disabled></textarea>
+      </div>
+    
+      <button class="btn btn-danger" (click)="eliminarRecurso()">Eliminar</button>
+      <button class="btn btn-secondary" routerLink="/admin/lista-recursos">Cancelar</button>
+    </div>
+  </div>
+  

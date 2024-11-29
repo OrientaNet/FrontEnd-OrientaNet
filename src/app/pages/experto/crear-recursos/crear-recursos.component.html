@@ -1,0 +1,38 @@
+<form [formGroup]="recursoForm" (ngSubmit)="onSubmit()">
+  <!-- Nombre del Recurso -->
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required>
+  </mat-form-field>
+
+  <!-- Descripción del Recurso -->
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput formControlName="descripcion" required></textarea>
+  </mat-form-field>
+
+  <!-- Recurso (tipo de archivo) -->
+  <mat-form-field appearance="fill">
+    <mat-label>Recurso</mat-label>
+    <input matInput formControlName="recurso" required>
+  </mat-form-field>
+
+  <!-- URL del Recurso -->
+  <mat-form-field appearance="fill">
+    <mat-label>URL</mat-label>
+    <input matInput type="url" formControlName="url" required>
+  </mat-form-field>
+
+  <!-- Selección de Carrera -->
+  <mat-form-field appearance="fill">
+    <mat-label>Carrera</mat-label>
+    <mat-select formControlName="carreraId" required>
+      <mat-option *ngFor="let carrera of carreras" [value]="carrera.id">
+        {{ carrera.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Botón de Crear -->
+  <button mat-raised-button color="primary" type="submit" [disabled]="recursoForm.invalid">Crear Recurso</button>
+</form>
