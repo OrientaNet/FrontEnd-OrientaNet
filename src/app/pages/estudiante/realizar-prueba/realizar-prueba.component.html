@@ -10,6 +10,7 @@
       <!-- Opciones de Respuestas -->
       <div class="opciones">
         <mat-card *ngFor="let respuesta of preguntaActual.respuestas" class="opcion-card">
+          <!-- Asignar un formControlName único para cada pregunta -->
           <mat-radio-group [formControlName]="preguntaActual.id">
             <mat-radio-button [value]="respuesta.id">{{ respuesta.descripcion }}</mat-radio-button>
           </mat-radio-group>

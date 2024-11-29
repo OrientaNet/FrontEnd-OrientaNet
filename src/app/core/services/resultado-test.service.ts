@@ -13,6 +13,7 @@ export class ResultadoTestService {
   private http = inject(HttpClient);
 
   getResultadoTestByEstudianteId(estudianteId: number): Observable<ResultadoTest> {
-    return this.http.get<ResultadoTest>(`${this.baseURL}/estudiante/${estudianteId}`);
+    // Usamos el nuevo endpoint con el estudianteId dinámico
+    return this.http.get<ResultadoTest>(`${this.baseURL}/buscarPorUsuario/${estudianteId}`);
   }
 }

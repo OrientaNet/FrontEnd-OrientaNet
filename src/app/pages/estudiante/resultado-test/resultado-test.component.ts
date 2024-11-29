@@ -25,9 +25,10 @@ export class ResultadoTestComponent {
 
   loadResultadoTest(): void {
     const authData = this.authService.getUser();
-    const estudianteId = authData?.id;
+    const estudianteId = authData?.id;  // Obtenemos el ID del usuario logueado
 
     if (estudianteId) {
+      // Usamos el nuevo servicio con la URL correcta
       this.resultadoTestService.getResultadoTestByEstudianteId(estudianteId).subscribe({
         next: (resultado) => {
           this.resultadoTest = resultado;
