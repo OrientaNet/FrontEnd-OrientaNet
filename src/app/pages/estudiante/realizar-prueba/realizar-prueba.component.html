@@ -10,6 +10,7 @@
       <!-- Opciones de Respuestas -->
       <div class="opciones">
         <mat-card *ngFor="let respuesta of preguntaActual.respuestas" class="opcion-card">
+          <!-- Vincula el radio button al control correspondiente -->
           <mat-radio-group [formControlName]="preguntaActual.id">
             <mat-radio-button [value]="respuesta.id">{{ respuesta.descripcion }}</mat-radio-button>
           </mat-radio-group>

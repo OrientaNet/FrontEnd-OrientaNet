@@ -1,4 +1,3 @@
-import { AuthService } from './../../../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -9,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-realizar-prueba',
@@ -27,7 +27,7 @@ export class RealizarPruebaComponent implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private router: Router,
-    private AuthService: AuthService
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -48,11 +48,15 @@ export class RealizarPruebaComponent implements OnInit {
 
   crearFormulario(): void {
     const controles: any = {};
+
+    // Asegúrate de que cada pregunta tenga un control en el formulario reactivo
     this.prueba.preguntas.forEach((pregunta) => {
       controles[pregunta.id] = [null, Validators.required]; // Respuesta obligatoria
     });
+
     this.formularioPrueba = this.fb.group(controles);
   }
+
 
   get preguntaActual() {
     return this.prueba.preguntas[this.indicePregunta];
@@ -73,8 +77,10 @@ export class RealizarPruebaComponent implements OnInit {
   terminarPrueba(): void {
     if (this.formularioPrueba.valid) {
       const respuestasSeleccionadas = this.formularioPrueba.value;
-      const authData = this.AuthService.getUser();
+      const authData = this.authService.getUser();
       const estudianteId = authData?.id;
+
+      console.log(respuestasSeleccionadas);
 
       // Verifica si estudianteId está definido
       if (estudianteId !== undefined) {
@@ -83,7 +89,8 @@ export class RealizarPruebaComponent implements OnInit {
             this.snackBar.open('Prueba enviada exitosamente', 'Cerrar', { duration: 3000 });
             this.router.navigate(['/estudiante/resultado-test']);
           },
-          error: () => {
+          error: (err) => {
+            console.error('Error al enviar las respuestas', err);
             this.snackBar.open('Error al enviar las respuestas', 'Cerrar', { duration: 3000 });
           }
         });
