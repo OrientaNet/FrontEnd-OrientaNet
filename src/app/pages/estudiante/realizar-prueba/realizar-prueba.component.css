@@ -35,32 +35,3 @@
   margin-top: 20px;
 }
 
-.mat-radio-button {
-  display: inline-block;
-  margin: 5px;
-}
-
-.mat-radio-button-checked {
-  background-color: #6200ea; /* Color de fondo para los botones seleccionados */
-  color: white;
-}
-
-.mat-radio-button-label {
-  font-size: 16px;
-}
-
-.opcion-card {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.opcion-card:hover {
-  background-color: #f1f1f1;
-}
-
-.mat-radio-button-checked .mat-radio-inner-circle {
-  background-color: #6200ea; /* Color del círculo de selección */
-}
