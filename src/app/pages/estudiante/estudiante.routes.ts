@@ -5,6 +5,7 @@ import { PagosComponent } from './pagos/pagos.component';
 import { UserProfileComponent } from '../../shared/components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from '../../shared/components/update-profile/update-profile.component';
 import { ResultadoTestComponent } from './resultado-test/resultado-test.component';
+import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 export const estudianteRoutes: Routes = [
   {
@@ -15,7 +16,8 @@ export const estudianteRoutes: Routes = [
       { path: 'pagos', component: PagosComponent },
       { path: 'profile', component: UserProfileComponent },
       { path: 'profile/update', component: UpdateProfileComponent },
-      { path: 'resultado-test', component: ResultadoTestComponent }
+      { path: 'resultado-test', component: ResultadoTestComponent },
+      { path: 'suscripcion', component: SuscripcionComponent },
     ],
   }
 ];

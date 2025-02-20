@@ -1,0 +1,17 @@
+<div class="suscripcion-container">
+  <h2>Planes de Suscripción</h2>
+
+  <div *ngIf="isLoading">Cargando planes...</div>
+
+  <div *ngIf="!isLoading && planes.length === 0">
+    <p>No hay planes disponibles en este momento.</p>
+  </div>
+
+  <div *ngFor="let plan of planes" class="plan-card">
+    <h3>{{ plan.nombre }}</h3>
+    <p><strong>Precio:</strong> ${{ plan.precio }}</p>
+    <p><strong>Beneficios:</strong> {{ plan.beneficios }}</p>
+
+    <button (click)="suscribirse(plan)">Suscribirse con PayPal</button>
+  </div>
+</div>

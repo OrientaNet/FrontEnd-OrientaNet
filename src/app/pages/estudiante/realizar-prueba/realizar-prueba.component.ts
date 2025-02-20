@@ -31,7 +31,7 @@ export class RealizarPruebaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cargarPrueba(17); // Cambia este ID por el ID dinámico de la prueba
+    this.cargarPrueba(8); // Cambia este ID por el ID dinámico de la prueba
   }
 
   cargarPrueba(pruebaId: number): void {

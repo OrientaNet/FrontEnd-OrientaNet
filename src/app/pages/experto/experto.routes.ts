@@ -5,6 +5,7 @@ import { ListaRecursosComponent } from './lista-recursos/lista-recursos.componen
 import { CrearRecursosComponent } from './crear-recursos/crear-recursos.component';
 import { EliminarRecursoComponent } from './eliminar-recursos/eliminar-recursos.component';
 import { ActualizarRecursoComponent } from './actualizar-recursos/actualizar-recursos.component';
+import { UpdateProfileComponent } from '../../shared/components/update-profile/update-profile.component';
 
 export const expertoRoutes: Routes = [
   {
@@ -16,6 +17,7 @@ export const expertoRoutes: Routes = [
       { path: 'crear-recurso', component: CrearRecursosComponent},
       { path: 'eliminar-recursos', component: EliminarRecursoComponent},
       { path: 'actualizar-recursos', component: ActualizarRecursoComponent},
+      { path: 'profile/update', component: UpdateProfileComponent }
     ]
   }
 ];

@@ -1,7 +1,7 @@
 export interface UserProfile {
   id: number;
   email: string;
-  role: 'ESTUDIANTE' | 'EXPERTO' | 'ADMIN' | null;
+  role?: 'ESTUDIANTE' | 'EXPERTO' | 'ADMIN' | null;
   nombre: string;
   apellido: string;
   informacionPersonal?: string,

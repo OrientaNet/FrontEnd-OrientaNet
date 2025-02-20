@@ -1,1 +1,29 @@
-<p>pagos works!</p>
+<div class="pagos-container">
+  <h2>Historial de Pagos</h2>
+
+  <div *ngIf="isLoading">Cargando historial de pagos...</div>
+
+  <div *ngIf="!isLoading && historialPagos.length === 0">
+    <p>No tienes pagos registrados.</p>
+    <button (click)="suscribirse()">Suscribirse Ahora</button>
+  </div>
+
+  <div *ngIf="!isLoading && historialPagos.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Monto</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pago of historialPagos">
+          <td>{{ pago.fecha | date }}</td>
+          <td>${{ pago.monto }}</td>
+          <td>{{ pago.estado }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

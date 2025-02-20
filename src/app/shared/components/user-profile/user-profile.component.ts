@@ -53,7 +53,14 @@ export class UserProfileComponent {
   }
 
   redirectToUpdateProfile(): void {
-    this.router.navigate(['/estudiante/profile/update']);
+    const authData = this.authService.getUser(); // Obtiene los datos del usuario autenticado
+    if (authData?.role === 'ESTUDIANTE') {
+      this.router.navigate(['/estudiante/profile/update']);
+    } else if (authData?.role === 'EXPERTO') {
+      this.router.navigate(['/experto/profile/update']);
+    } else {
+      this.showSnackBar('Rol no reconocido');
+    }
   }
 
   private showSnackBar(message: string): void {

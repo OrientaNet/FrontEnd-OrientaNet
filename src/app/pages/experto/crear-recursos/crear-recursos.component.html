@@ -1,3 +1,5 @@
+<div class="container">
+  <h2 class="title">Crear Recurso</h2>
 <form [formGroup]="recursoForm" (ngSubmit)="onSubmit()">
   <!-- Nombre del Recurso -->
   <mat-form-field appearance="fill">
@@ -36,3 +38,4 @@
   <!-- Botón de Crear -->
   <button mat-raised-button color="primary" type="submit" [disabled]="recursoForm.invalid">Crear Recurso</button>
 </form>
+</div>

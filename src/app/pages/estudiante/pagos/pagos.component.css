@@ -1,0 +1,39 @@
+.pagos-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fffaf0;
+  border: 1px solid #ffd9b3;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+button {
+  background-color: #0070ba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005ea6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,31 @@
+<div class="admin-planes-container">
+  <h2>Gestión de Planes de Suscripción</h2>
+
+  <form [formGroup]="planForm" (ngSubmit)="guardarPlan()">
+    <label>Nombre:</label>
+    <input formControlName="nombre" placeholder="Nombre del plan" />
+
+    <label>Precio:</label>
+    <input formControlName="precio" type="number" placeholder="Precio" />
+
+    <label>Beneficios:</label>
+    <textarea formControlName="beneficios" placeholder="Beneficios del plan"></textarea>
+
+    <label>Duración (días):</label>
+    <input formControlName="duracionDias" type="number" placeholder="Duración en días" />
+
+    <button type="submit">{{ editingPlanId ? 'Actualizar Plan' : 'Crear Plan' }}</button>
+    <button type="button" *ngIf="editingPlanId" (click)="cancelarEdicion()">Cancelar</button>
+  </form>
+
+  <h3>Planes Existentes</h3>
+  <div *ngIf="isLoading">Cargando planes...</div>
+  <ul>
+    <li *ngFor="let plan of planes">
+      <strong>{{ plan.nombre }}</strong> - ${{ plan.precio }} ({{ plan.duracionDias }} días)
+      <p>{{ plan.beneficios }}</p>
+      <button (click)="editarPlan(plan)">Editar</button>
+      <button (click)="eliminarPlan(plan.id)">Eliminar</button>
+    </li>
+  </ul>
+</div>
